@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Water Quest</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- START SCREEN -->
+    <section id="startScreen" class="screen active">
+      <div class="card">
+        <h1>Water Quest</h1>
+        <p class="sub">Tap clean water cans. Avoid dirty cans.</p>
+
+        <div class="heroIcon" aria-hidden="true">🟨</div>
+
+        <div class="controls">
+          <label class="row">
+            Round length:
+            <select id="roundLength">
+              <option value="30">30 seconds</option>
+              <option value="45">45 seconds</option>
+              <option value="60">60 seconds</option>
+            </select>
+          </label>
+
+          <button id="startBtn" class="btn primary">Start</button>
+        </div>
+
+        <p class="tiny">Goal: learn + have fun while supporting clean water access.</p>
+      </div>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="gameScreen" class="screen">
+      <header class="topbar">
+        <div class="stat"><span class="label">Score</span> <span id="score">0</span></div>
+        <div class="stat"><span class="label">Streak</span> <span id="streak">0</span></div>
+        <div class="stat"><span class="label">Time</span> <span id="time">30</span>s</div>
+      </header>
+
+      <div class="message" id="message">Tap the cans!</div>
+
+      <div class="grid" id="grid" aria-label="Game grid"></div>
+
+      <footer class="bottombar">
+        <div class="progressWrap">
+          <div class="progressLabel">Milestone</div>
+          <div class="progress">
+            <div id="progressFill" class="progressFill"></div>
+          </div>
+          <div id="milestoneText" class="progressText">0 / 100</div>
+        </div>
+        <button id="quitBtn" class="btn">Quit</button>
+      </footer>
+    </section>
+
+    <!-- END SCREEN -->
+    <section id="endScreen" class="screen">
+      <div class="card">
+        <h2>Round Complete</h2>
+        <p class="sub" id="finalLine">You scored 0 points.</p>
+
+        <div class="endStats">
+          <div><span class="label">Final Score</span> <strong id="finalScore">0</strong></div>
+          <div><span class="label">Clean Taps</span> <strong id="cleanTaps">0</strong></div>
+          <div><span class="label">Dirty Taps</span> <strong id="dirtyTaps">0</strong></div>
+        </div>
+
+        <div class="controls">
+          <button id="playAgainBtn" class="btn primary">Play Again</button>
+          <button id="backBtn" class="btn">Back to Start</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
